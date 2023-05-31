@@ -45,21 +45,24 @@ function SlideBar() {
 }
 
 
-const SlideContent = styled.div`
+const SlideContainerItems = styled.ul`
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: space-between;
+    background: #fff;
+    height: 100%;
+    padding: 0 0 0 30px;
+`
+const SlideContent = styled.li`
    width: 30px;
-   margin-bottom: 80px;
-   display: block;
+   margin-bottom: 70px;
 `
 const ContentImage = styled.img`
     display: block;
     width: 100%;
 `
-const SlideContainerItems = styled.ul`
-     display: flex;
-     flex-wrap: wrap;
-     flex-direction: column;
-     justify-content: space-between;
+const Item = styled(NavLink)`
+    width: 70px;
 `
-const Item = styled(NavLink)``
 
 export default SlideBar;

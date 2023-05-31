@@ -5,9 +5,13 @@ function Header() {
 	return (
 		<HeaderContainer>
 			<LeftBox>
-				<Heading>My Cambervan</Heading>
-				<Input type="text" placeholder="Search Cambervan" />
-      			<LogoImage src={require("../../Assets/Search.svg").default} alt="Search Icon" />
+				<LogoContainer>
+					<LogoImage src={require("../../Assets/My Cambervan.png")} alt="logo_image" />
+				</LogoContainer>
+				<SearchContainer>
+					<Input type="text" placeholder="Search Cambervan" />
+					<SearchImage src={require("../../Assets/Search.svg").default} alt="Search Icon" />
+				</SearchContainer>
 			</LeftBox>
 			<RightBox>
 				<ImageContainer>
@@ -28,10 +32,9 @@ function Header() {
 const HeaderContainer = styled.div`
 	background: #fff;
 	height: 100px;
-	width: 90%;
+	width: 100%;
 	display: flex;
 	justify-content: space-between;
-	align-items: center;
 `
 const LeftBox = styled.div`
 	display: flex;
@@ -39,27 +42,39 @@ const LeftBox = styled.div`
 	margin-left: 150px;
 	align-items: center;
 `
-const Heading = styled.h1`
-	font-size: 25px;
-	color: #2e355d;
-	margin-right: 50px;
+const LogoContainer = styled.div`
+	width: 150px;
+	margin-right: 45px;
 `
+
+const LogoImage = styled.img`
+	margin-right: 50px; 
+	display: block;
+	width: 100%;
+`
+const SearchContainer = styled.div`
+	margin-bottom: 40px;
+
+`
+
 const Input = styled.input`
 	border: 1px solid #A7ACB7;
 	background: #f6f6f6;
-	height: 40px;
-	width: 300px;
+	width: 450px;
 	border-radius: 10px;
-	padding: 0 10px;
+    padding: 15px 40px;
 `
-const LogoImage = styled.img`
+const SearchImage = styled.img`
 	position: relative;
-	right: 40px;
+    right: 60px;
+    top: 28px;
+    padding: 20px;
 `
 const RightBox = styled.div`
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
+	margin-right: 50px;
 `
 const ImageContainer = styled.div`
 	width: 45px;
@@ -83,7 +98,6 @@ const UserName = styled.h3`
 const UserId = styled.span`
 	font-size: 16px;
 	color: #A8ADB4;
-	width: 50px;
 `
 const ArrowContainer = styled.div`
 	width: 25px;
