@@ -15,7 +15,7 @@ function SlideBar() {
                 </Item> 
 
                 <Item to="/car">
-                    <SlideContent >
+                    <SlideContent>
                         <ContentImage src={require("../../Assets/Car.svg").default} alt="Content-image" />
                     </SlideContent>
                 </Item> 
@@ -28,13 +28,13 @@ function SlideBar() {
                 </Item> 
 
                 <Item to="/save">
-                    <SlideContent >
+                    <SlideContent>
                         <ContentImage src={require("../../Assets/Save.svg").default} alt="Content-image" />
                     </SlideContent>
                 </Item> 
 
                 <Item to="/message">
-                    <SlideContent >
+                    <SlideContent>
                         <ContentImage src={require("../../Assets/Message.svg").default} alt="Content-image" />
                     </SlideContent>
                 </Item> 
@@ -51,15 +51,21 @@ const SlideContainerItems = styled.ul`
     justify-content: space-between;
     background: #fff;
     height: 100%;
-    padding: 0 0 0 30px;
+    padding: 0 15px;
 `
 const SlideContent = styled.li`
    width: 30px;
-   margin-bottom: 70px;
+   margin-bottom: 40px;
+    && :hover {
+            background: #fce9e1;
+            border-radius: 20px;
+            cursor: pointer;
+        }
 `
 const ContentImage = styled.img`
     display: block;
     width: 100%;
+    padding: 20px;
 `
 const Item = styled(NavLink)`
     width: 70px;

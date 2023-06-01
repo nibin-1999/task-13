@@ -8,6 +8,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Header from "./components/includes/Header";
 import SlideBar from "./components/includes/SlideBar";
 import styled from "styled-components";
+import PopGallery from "./components/screens/PopGallery";
 
 
 
@@ -20,12 +21,14 @@ function App() {
 					<SlideBar />
 					<Routes>
 						<Route path="/" exact Component={Car}/>
-						<Route path="/menu" exact Component={Menu}/>
-						<Route path="/car" exact Component={Car}/>
-						<Route path="/calender" exact Component={Calender}/>
-						<Route path="/save" exact Component={Save}/>
-						<Route path="/message" exact Component={Message}/>
-						<Route path="/*" exact Component={NoMatching}/>
+						<Route path="menu" exact Component={Menu}/>
+						<Route path="car" exact Component={Car}>
+							<Route path="car/popgallery" exact Component={PopGallery} />
+						</Route>
+						<Route path="calender" exact Component={Calender}/>
+						<Route path="save" exact Component={Save}/>
+						<Route path="message" exact Component={Message}/>
+						<Route path="*" exact Component={NoMatching}/>
 					</Routes>
 				</Router>
 			</MainContainer>

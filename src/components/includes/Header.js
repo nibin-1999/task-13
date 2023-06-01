@@ -87,17 +87,19 @@ const ImageContainer = styled.div`
 const UserImage = styled.img`
 	width: 100%;
 	display: block;
+    cursor: pointer;
 `
 const ImageDetails = styled.div`
 `
 const UserName = styled.h3`
 	font-size: 18px;
 	color: #2E355D;
-	line-height: 0.1em;
+    cursor: pointer;
 `
 const UserId = styled.span`
 	font-size: 16px;
 	color: #A8ADB4;
+    cursor: pointer;
 `
 const ArrowContainer = styled.div`
 	width: 25px;
@@ -105,8 +107,9 @@ const ArrowContainer = styled.div`
 const ArrowImage = styled.img`
 	width: 100%;
 	position: relative;
-	top: 23px;
-    left: 7px;
+	top: 15px;
+    left: 5px;
+    cursor: pointer;
 
 `
 

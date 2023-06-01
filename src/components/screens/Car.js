@@ -1,32 +1,8 @@
-import React, { useState } from "react";
 import { Helmet } from "react-helmet";
 import styled from "styled-components";
+import PopGallery from "./PopGallery";
 
-const Car = () => {
-    const [isOpen, setIsOpen] = useState(false);
-    const [selectedImage, setSelectedImage] = useState(null);
-
-    const handleImageClick = (image) => {
-        setSelectedImage(image);
-        setIsOpen(true);
-    };
-
-    const handleClose = () => {
-        setIsOpen(false);
-    };
-
-    const galleryImages = [
-        "image1.jpg",
-        "image2.jpg",
-        "image3.jpg",
-        "image4.jpg",
-        "image5.jpg",
-        "image6.jpg",
-        "image7.jpg",
-        "image8.jpg",
-        "image9.jpg",
-        "image10.jpg",
-    ];
+function Car() {
 
     return (
         <MainContainer>
@@ -37,46 +13,7 @@ const Car = () => {
             </div>
 
             <LeftContainer>
-                <GalleryContainer>
-                    <LeftGAllery>
-                        <LeftGalleryItem>
-                            <MainItem
-                                src={require("../../Assets/2102.i126.021 1.jpg")}
-                                alt="image"
-                            />
-                        </LeftGalleryItem>
-                    </LeftGAllery>
-                    <RightGallery>
-                        <RightGalleryItem>
-                            <SubItem
-                                src={require("../../Assets/camping-with-caravan-illustration-with-couple-campfire_23-2148657069 1.jpg")}
-                                alt="image"
-                            />
-                        </RightGalleryItem>
-                        <RightGalleryItem
-                            onClick={() => handleImageClick("image1.jpg")}>
-                            <SubItem
-                                src={require("../../Assets/camping-with-caravan-illustration_52683-46615 1.jpg")}
-                                alt="image"
-                            />
-                        </RightGalleryItem>
-                    </RightGallery>
-                    {isOpen && (
-                        <PopupGallery>
-                            {galleryImages.map((image, index) => (
-                                <Img
-                                    key={index}
-                                    src={image}
-                                    alt={`Gallery Image ${index + 1}`}
-                                />
-                            ))}
-                            <CloseButton onClick={handleClose}>
-                                Close
-                            </CloseButton>
-                        </PopupGallery>
-                    )}
-                </GalleryContainer>
-
+                <PopGallery />
                 <ContentContainer>
                     <LeftContentBox>
                         <LeftTopContent>
@@ -110,37 +47,43 @@ const Car = () => {
                             <BottomContainer>
                                 <BottomLeftContainer>
                                     <BottomContent>
-                                        <ContentImage
-                                            src={
-                                                require("../../Assets/Queen-Bed.svg")
-                                                    .default
-                                            }
-                                            alt="image"
-                                        />
+                                        <ContentImageContainer>
+                                            <ContentImage
+                                                src={
+                                                    require("../../Assets/Queen-Bed.svg")
+                                                        .default
+                                                }
+                                                alt="image"
+                                            />
+                                        </ContentImageContainer>
                                         <ContentHeading>
                                             Queen bed fit out
                                         </ContentHeading>
                                     </BottomContent>
                                     <BottomContent>
-                                        <ContentImage
-                                            src={
-                                                require("../../Assets/Kitchen.svg")
-                                                    .default
-                                            }
-                                            alt="image"
-                                        />
+                                        <ContentImageContainer>
+                                            <ContentImage
+                                                src={
+                                                    require("../../Assets/Kitchen.svg")
+                                                        .default
+                                                }
+                                                alt="image"
+                                            />
+                                        </ContentImageContainer>
                                         <ContentHeading>
                                             Guest house
                                         </ContentHeading>
                                     </BottomContent>
                                     <BottomContent>
-                                        <ContentImage
-                                            src={
-                                                require("../../Assets/Battery.svg")
-                                                    .default
-                                            }
-                                            alt="image"
-                                        />
+                                        <ContentImageContainer>
+                                            <ContentImage
+                                                src={
+                                                    require("../../Assets/Battery.svg")
+                                                        .default
+                                                }
+                                                alt="image"
+                                            />
+                                        </ContentImageContainer>
                                         <ContentHeading>
                                             Charging facility
                                         </ContentHeading>
@@ -148,37 +91,43 @@ const Car = () => {
                                 </BottomLeftContainer>
                                 <BottomRightContainer>
                                     <BottomContent>
-                                        <ContentImage
-                                            src={
-                                                require("../../Assets/Room.svg")
-                                                    .default
-                                            }
-                                            alt="image"
-                                        />
+                                        <ContentImageContainer>
+                                            <ContentImage
+                                                src={
+                                                    require("../../Assets/Room.svg")
+                                                        .default
+                                                }
+                                                alt="image"
+                                            />
+                                        </ContentImageContainer>
                                         <ContentHeading>
                                             Room single bed
                                         </ContentHeading>
                                     </BottomContent>
                                     <BottomContent>
-                                        <ContentImage
-                                            src={
-                                                require("../../Assets/Plus.svg")
-                                                    .default
-                                            }
-                                            alt="image"
-                                        />
+                                        <ContentImageContainer>
+                                            <ContentImage
+                                                src={
+                                                    require("../../Assets/Plus.svg")
+                                                        .default
+                                                }
+                                                alt="image"
+                                            />
+                                        </ContentImageContainer>
                                         <ContentHeading>
                                             Additional requirements
                                         </ContentHeading>
                                     </BottomContent>
                                     <BottomContent>
-                                        <ContentImage
-                                            src={
-                                                require("../../Assets/Info.svg")
-                                                    .default
-                                            }
-                                            alt="image"
-                                        />
+                                        <ContentImageContainer>
+                                            <ContentImage
+                                                src={
+                                                    require("../../Assets/Info.svg")
+                                                        .default
+                                                }
+                                                alt="image"
+                                            />
+                                        </ContentImageContainer>
                                         <ContentHeading>
                                             Information
                                         </ContentHeading>
@@ -206,20 +155,25 @@ const Car = () => {
                                 </OwnerLeftInfo>
                                 <OwnerRightInfo>
                                     <ContactImageContainer>
-                                        <MessageIcone
-                                            src={
-                                                require("../../Assets/Message-fill.svg")
-                                                    .default
-                                            }
-                                            alt="image"
-                                        />
-                                        <CallIcone
-                                            src={
-                                                require("../../Assets/Call.svg")
-                                                    .default
-                                            }
-                                            alt="image"
-                                        />
+                                        <MessageImageContainer>
+                                            <MessageIcone
+                                                src={
+                                                    require("../../Assets/Message-fill.svg")
+                                                        .default
+                                                }
+                                                alt="image"
+                                            />
+                                        </MessageImageContainer>
+
+                                        <CallImageContainer>
+                                            <CallIcone
+                                                src={
+                                                    require("../../Assets/Call.svg")
+                                                        .default
+                                                }
+                                                alt="image"
+                                            />
+                                        </CallImageContainer>
                                     </ContactImageContainer>
                                 </OwnerRightInfo>
                             </OwnerInfo>
@@ -239,10 +193,14 @@ const Car = () => {
                                             No insurence selected
                                         </InsurenceHeading2>
                                     </Claim>
-                                    <Amount>
-                                        <Price>$0.00</Price>
-                                        <PriceDay>$14/day</PriceDay>
-                                    </Amount>
+                                    <Amount1>
+                                        <AmountRate1>
+                                            <Price>$0.00</Price>
+                                        </AmountRate1>
+                                        <AmountRate2>
+                                            <PriceDay>$14/day</PriceDay>
+                                        </AmountRate2>
+                                    </Amount1>
                                 </NoInsurence>
                                 <CollisonProtection>
                                     <CheckList></CheckList>
@@ -254,10 +212,14 @@ const Car = () => {
                                             Collition protection on vehicle only
                                         </InsurenceHeading2>
                                     </Claim>
-                                    <Amount>
-                                        <Price>$0.00</Price>
-                                        <PriceDay>$14/day</PriceDay>
-                                    </Amount>
+                                    <Amount2>
+                                        <AmountRate1>
+                                            <Price>$0.00</Price>
+                                        </AmountRate1>
+                                        <AmountRate2>
+                                            <PriceDay>$14/day</PriceDay>
+                                        </AmountRate2>
+                                    </Amount2>
                                 </CollisonProtection>
                                 <ThirdParty>
                                     <CheckList></CheckList>
@@ -269,10 +231,14 @@ const Car = () => {
                                             3rd party liability insurence only
                                         </InsurenceHeading2>
                                     </Claim>
-                                    <Amount>
-                                        <Price>$0.00</Price>
-                                        <PriceDay>$14/day</PriceDay>
-                                    </Amount>
+                                    <Amount3>
+                                        <AmountRate1>
+                                            <Price>$0.00</Price>
+                                        </AmountRate1>
+                                        <AmountRate2>
+                                            <PriceDay>$14/day</PriceDay>
+                                        </AmountRate2>
+                                    </Amount3>
                                 </ThirdParty>
                             </Insurencedetails>
                         </RightBottomContent>
@@ -341,7 +307,7 @@ const Car = () => {
             </RightContiner>
         </MainContainer>
     );
-};
+}
 
 const MainContainer = styled.div`
     width: 100%;
@@ -355,49 +321,11 @@ const MainContainer = styled.div`
 const LeftContainer = styled.div`
     width: 60%;
     background: #fff;
-    padding: 20px;
+    padding: 25px;
     border-radius: 40px;
     margin: 0 30px;
 `;
 
-const GalleryContainer = styled.div`
-    cursor: pointer;
-    display: flex;
-    width: 100%;
-`;
-const LeftGAllery = styled.div`
-    margin-right: 20px;
-    width: 60%;
-`;
-
-const LeftGalleryItem = styled.div`
-    width: 80%;
-`;
-
-const MainItem = styled.img`
-    display: block;
-    width: 100%;
-    border-top-left-radius: 50px;
-    border-top-right-radius: 50px;
-    border-bottom-left-radius: 50px;
-    border-bottom-right-radius: 50px;
-`;
-
-const RightGallery = styled.div`
-    width: 20%;
-`;
-
-const RightGalleryItem = styled.div`
-    width: 20%;
-    margin-top: 13px;
-    width: 230px;
-`;
-
-const SubItem = styled.img`
-    display: block;
-    width: 100%;
-    border-radius: 40px;
-`;
 
 const ContentContainer = styled.div`
     display: flex;
@@ -405,7 +333,7 @@ const ContentContainer = styled.div`
 `;
 
 const LeftContentBox = styled.div`
-    width: 50%;
+    width: 60%;
 `;
 
 const LeftTopContent = styled.div`
@@ -439,6 +367,7 @@ const Span = styled.span`
     font-size: 21px;
     font-weight: 700;
     color: #2e355d;
+    cursor: pointer;
 `;
 
 const Spot = styled.span`
@@ -447,6 +376,7 @@ const Spot = styled.span`
     margin-right: 10px;
     font-weight: 700;
     color: #2e355d;
+    cursor: pointer;
 `;
 
 const Paragraph = styled.p`
@@ -475,16 +405,28 @@ const BottomLeftContainer = styled.div`
 `;
 
 const BottomRightContainer = styled.div`
-    width: 50%;
+    width: 64%;
 `;
 const BottomContent = styled.div`
-    width: 100%;
+    width: 80%;
     display: flex;
     justify-content: flex-start;
 `;
 
+const ContentImageContainer = styled.div`
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    && :hover {
+        background: #fce9e1;
+        border-radius: 15px;
+        cursor: pointer;
+    }
+`;
+
 const ContentImage = styled.img`
     margin-right: 20px;
+    padding: 10px;
 `;
 
 const ContentHeading = styled.h4`
@@ -493,11 +435,12 @@ const ContentHeading = styled.h4`
 `;
 
 const RightContentBox = styled.div`
-    width: 50%;
+    width: 340%;
 `;
 
 const RightTopContent = styled.div`
     width: 100%;
+    margin-bottom: 30px;
 `;
 
 const OwnerHeading = styled.h3`
@@ -533,6 +476,7 @@ const OwnerImageContainer = styled.div`
 const OwnerImage = styled.img`
     width: 100%;
     display: block;
+    cursor: pointer;
 `;
 
 const OwnerDetails = styled.div`
@@ -543,10 +487,12 @@ const OwnerName = styled.h2`
     font-size: 20px;
     font-weight: 700;
     margin: 20px 0 0 0;
+    cursor: pointer;
 `;
 const OwnerId = styled.span`
     font-size: 16px;
     color: #a8adb4;
+    cursor: pointer;
 `;
 
 const OwnerRightInfo = styled.div`
@@ -554,52 +500,128 @@ const OwnerRightInfo = styled.div`
 `;
 
 const ContactImageContainer = styled.div`
+    display: flex;
+    justify-content: space-between;
+`;
+
+const MessageImageContainer = styled.div`
     width: 80px;
     display: flex;
     justify-content: space-between;
+    margin-right: 15px;
     && :hover {
         background: #fce9e1;
         border-radius: 20px;
         cursor: pointer;
     }
 `;
+
 const MessageIcone = styled.img`
     width: 100%;
     display: block;
-    padding: 10px 20px;
+    padding: 20px;
+`;
+
+const CallImageContainer = styled.div`
+    width: 80px;
+    display: flex;
+    justify-content: space-between;
+    && :hover {
+        background: #d7ebdf;
+        border-radius: 20px;
+        cursor: pointer;
+    }
 `;
 
 const CallIcone = styled.img`
     width: 100%;
     display: block;
-    padding: 10px 20px;
+    padding: 20px;
 `;
 
-const RightBottomContent = styled.div``;
+const RightBottomContent = styled.div`
+    width: 100%;
+    margin-top: 30px;
+`;
 
-const InsurenceHeading = styled.h2``;
+const InsurenceHeading = styled.h2`
+    font-size: 20px;
+    margin-bottom: 20px;
+`;
 
-const Insurencedetails = styled.div``;
+const Insurencedetails = styled.div`
+    width: 100%;
+`;
 
-const NoInsurence = styled.div``;
+const NoInsurence = styled.div`
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+`;
 
-const CheckList = styled.button``;
+const CollisonProtection = styled.div`
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+`;
 
-const Claim = styled.div``;
+const ThirdParty = styled.div`
+    display: flex;
+    align-items: center;
+`;
 
-const InsurenceHeading1 = styled.h2``;
+const CheckList = styled.button`
+    height: 20px;
+    width: 20px;
+    border-radius: 20px;
+    border: 1px solid #2e355d;
+    cursor: pointer;
+    top: 0px;
+`;
 
-const InsurenceHeading2 = styled.span``;
+const Claim = styled.div`
+    margin-left: 15px;
+`;
 
-const Amount = styled.h4``;
+const InsurenceHeading1 = styled.h3`
+    margin: 0 70px 5px 0;
+    font-size: 18px;
+    font-weight: 600;
+    width: 100%;
+    color: #2e355d;
+`;
 
-const Price = styled.span``;
+const InsurenceHeading2 = styled.h4`
+    font-size: 15px;
+    font-weight: 600;
+    color: #a8adb4;
+`;
 
-const PriceDay = styled.span``;
+const Amount1 = styled.h4`
+    margin-left: 30px;
+    margin-left: 110px;
+`;
 
-const CollisonProtection = styled.div``;
+const Amount2 = styled.h4`
+    margin-left: 59px;
+`;
+const Amount3 = styled.h4`
+    margin-left: 72px;
+`;
 
-const ThirdParty = styled.div``;
+const AmountRate1 = styled.div``;
+
+const Price = styled.span`
+    margin-left: 7px;
+`;
+
+const AmountRate2 = styled.div``;
+
+const PriceDay = styled.span`
+    font-size: 15px;
+    font-weight: 600;
+    color: #a8adb4;
+`;
 
 const RightContiner = styled.div`
     width: 25%;
@@ -609,6 +631,7 @@ const RightTopContainer = styled.div`
     background: #fff;
     padding: 20px 30px;
     border-radius: 40px;
+    height: 55%;
 `;
 
 const RentHeading = styled.h1`
@@ -700,6 +723,7 @@ const DailyContentContainer = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin-bottom: 20px;
 `;
 
 const DailyContent = styled.h3`
@@ -718,13 +742,13 @@ const RentContainer = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin-top: 10px;
 `;
 
 const RentContent = styled.h3`
     font-size: 18px;
     font-weight: 600;
     color: #a8adb4;
-    margin: 8px 0;
 `;
 
 const RentRate = styled.h3`
@@ -738,7 +762,7 @@ const TotalContainer = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 5px;
+    margin: 10px 0;
 `;
 
 const TotalRent = styled.h1`
@@ -760,6 +784,7 @@ const RentButton = styled.button`
     background: rgb(253, 145, 114);
     padding: 12px;
     border-radius: 21px;
+    cursor: pointer;
 `;
 
 const RightBottomContainer = styled.div`
@@ -770,6 +795,7 @@ const MoreContainer = styled.div`
     display: flex;
     justify-content: space-between;
     padding: 0 20px;
+    margin: 15px 0;
 `;
 
 const MoreHead = styled.h2`
@@ -792,20 +818,6 @@ const MoreImage = styled.img`
     display: block;
     width: 100%;
     border-radius: 20px;
-`;
-
-const PopupGallery = styled.div`
-    width: 80%;
-    margin: 0 auto;
-    height: 900px;
-`;
-
-const Img = styled.img`
-    display: block;
-`;
-
-const CloseButton = styled.button`
-    /* Add your desired styles for the close button here */
 `;
 
 export default Car;
