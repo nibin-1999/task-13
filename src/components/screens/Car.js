@@ -4,8 +4,14 @@ import PopGallery from "./PopGallery";
 import { useState } from "react";
   
 function Car() {
-    const [check, setCheck] = useState(false);
-    const handleClick=()=>setCheck(!check)
+    const [selectedOption, setSelectedOption] = useState(false);
+    
+
+    const handleOptionChange = (event) => {
+        setSelectedOption(event.target.value);
+        
+
+    };
 
     return (
         <MainContainer>
@@ -169,8 +175,34 @@ function Car() {
                             </InsurenceHeading>
                             <Insurencedetails>
                                 <CheckList>
-                                    <CheckItem onClick={handleClick} >
-                                        
+                                    <CheckItem>
+                                        <Label>
+                                            <input
+                                                className="custom-radio"
+                                                type="radio"
+                                                value="option1"
+                                                checked={selectedOption === 'option1'}
+                                                onChange={handleOptionChange}
+                                            />
+                                        </Label>
+                                        <Label>
+                                            <input
+                                                className="custom-radio"
+                                                type="radio"
+                                                value="option2"
+                                                checked={selectedOption === 'option2'}
+                                                onChange={handleOptionChange}
+                                            />
+                                        </Label>
+                                        <Label>
+                                            <input
+                                                className="custom-radio"
+                                                type="radio"
+                                                value="option3"
+                                                checked={selectedOption === 'option3'}
+                                                onChange={handleOptionChange}
+                                            />
+                                        </Label>
                                     </CheckItem>
                                 </CheckList>
 
@@ -558,9 +590,12 @@ const CheckList = styled.div`
 `
 
 const CheckItem = styled.div`
-    margin-bottom: 38px;
+    display: flex;
+    flex-direction: column;
 `
-
+const Label = styled.div`
+    margin-bottom: 50px;
+`
 
 const ClaimList = styled.div`
     width: 70%;
@@ -806,5 +841,9 @@ const MoreImage = styled.img`
     width: 100%;
     border-radius: 20px;
 `;
+
+
+
+
 
 export default Car;

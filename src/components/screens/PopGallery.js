@@ -126,6 +126,8 @@ const GalleryContainer = styled.div`
     width: 100%;
     display: flex;
     justify-content: start;
+        
+    
 `;
 
 const LeftGAllery = styled.div`
@@ -163,12 +165,24 @@ const SubItem = styled.img`
     height: 250px;
     display: block;
     border-radius: 30px;
+    @media all and (max-width: 1280px){
+        width: 100%;
+        height: 170px;
+        display: block;
+        border-radius: 30px;
+    }
 `;
 const SubItem2 = styled.img`
     width: 270px;
     height: 235px;
     display: block;
     border-radius: 30px;
+    @media all and (max-width: 1280px){
+        width: 191px;
+        height: 168px;
+        display: block;
+        border-radius: 30px;
+    }
 `;
 
 const Paragraph = styled.p`

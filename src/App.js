@@ -41,6 +41,10 @@ width: 100%;
 margin: 0 auto;
 display:flex;
 font-family: 'Poppins-Regular';
+
+@media all and (max-width: 1280px){
+	
+}
 `
 
 export default App;
