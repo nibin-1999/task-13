@@ -4,14 +4,21 @@ import { Helmet } from 'react-helmet'
 
 function Message() {
     return (
+
         <MainContainer>
+            
             <div>
+
                 <Helmet>
                     <title>Message | My Cambervan</title>
                 </Helmet>
+
                 <Heading>COMING SOON...</Heading>
+
             </div>
+
         </MainContainer>
+
     )
 }
 

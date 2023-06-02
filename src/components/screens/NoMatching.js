@@ -4,15 +4,23 @@ import styled from 'styled-components';
 
 function NoMatching() {
     return (
+
         <MainContainer>
+
             <div>
+
                 <Helmet>
                     <title>NoMatching | My Cambervan</title>
                 </Helmet>
+
                 <Heading>Error 404...</Heading>
+
                 <SubHeading>Page Not Found...!!!</SubHeading>
+
             </div>
+            
         </MainContainer>
+
     )
 }
 const MainContainer = styled.div`

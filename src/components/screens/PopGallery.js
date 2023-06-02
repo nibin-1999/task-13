@@ -11,9 +11,11 @@ function PopGallery() {
     const closeGallery = () => {
         setShowGallery(false);
     };
+
     return (
         <>
             <GalleryContainer>
+
                 <LeftGAllery>
                     <LeftGalleryItem>
                         <MainItem
@@ -22,13 +24,16 @@ function PopGallery() {
                         />
                     </LeftGalleryItem>
                 </LeftGAllery>
+
                 <RightGallery>
+
                     <RightGalleryItem>
                         <SubItem
                             src={require("../../Assets/camping-with-caravan-illustration-with-couple-campfire_23-2148657069 1.jpg")}
                             alt="image"
                         />
                     </RightGalleryItem>
+
                     <RightGalleryItem2 onClick={handleGalleryClick}>
                         <SubItem2
                             src={require("../../Assets/camping-with-caravan-illustration_52683-46615 2.png")}
@@ -36,97 +41,117 @@ function PopGallery() {
                         />
                         <Paragraph>10+ Photos</Paragraph>
                     </RightGalleryItem2>
+
                 </RightGallery>
+
             </GalleryContainer>
+
             {showGallery && (
+
                 <GalleryPopUp>
                     {/* Gallery popup content goes here */}
+
                     <GalleryPopUpContainer>
+
                         <ImageContainer>
                             <GalleryPopUpImage
                                 src={require("../../Assets/Hotel/room12.png")}
                                 alt="image"
                             />
                         </ImageContainer>
+
                         <ImageContainer>
                             <GalleryPopUpImage
                                 src={require("../../Assets/Hotel/room9.png")}
                                 alt="image"
                             />
                         </ImageContainer>
+
                         <ImageContainer>
                             <GalleryPopUpImage
                                 src={require("../../Assets/Hotel/room1.png")}
                                 alt="image"
                             />
                         </ImageContainer>
+
                         <ImageContainer>
                             <GalleryPopUpImage
                                 src={require("../../Assets/Hotel/room2.png")}
                                 alt="image"
                             />
                         </ImageContainer>
+
                         <ImageContainer>
                             <GalleryPopUpImage
                                 src={require("../../Assets/Hotel/room3.png")}
                                 alt="image"
                             />
                         </ImageContainer>
+
                         <ImageContainer>
                             <GalleryPopUpImage
                                 src={require("../../Assets/Hotel/room4.png")}
                                 alt="image"
                             />
                         </ImageContainer>
+
                         <ImageContainer>
                             <GalleryPopUpImage
                                 src={require("../../Assets/Hotel/room11.png")}
                                 alt="image"
                             />
                         </ImageContainer>
+
                         <ImageContainer>
                             <GalleryPopUpImage
                                 src={require("../../Assets/Hotel/room8.png")}
                                 alt="image"
                             />
                         </ImageContainer>
+
                         <ImageContainer>
                             <GalleryPopUpImage
                                 src={require("../../Assets/Hotel/room6.png")}
                                 alt="image"
                             />
                         </ImageContainer>
+
                         <ImageContainer>
                             <GalleryPopUpImage
                                 src={require("../../Assets/Hotel/room5.png")}
                                 alt="image"
                             />
                         </ImageContainer>
+
                         <ImageContainer>
                             <GalleryPopUpImage
                                 src={require("../../Assets/Hotel/room7.png")}
                                 alt="image"
                             />
                         </ImageContainer>
+
                         <ImageContainer>
                             <GalleryPopUpImage
                                 src={require("../../Assets/Hotel/room10.png")}
                                 alt="image"
                             />
                         </ImageContainer>
+
                     </GalleryPopUpContainer>
+
                     <CloseButton onClick={closeGallery}>Close</CloseButton>
+
                 </GalleryPopUp>
             )}
         </>
     );
 }
 
+
 const GalleryContainer = styled.div`
     width: 100%;
     display: flex;
     justify-content: start;
-        
     
 `;
 

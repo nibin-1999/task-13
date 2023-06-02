@@ -4,14 +4,21 @@ import { Helmet } from 'react-helmet'
 
 function Calender() {
     return (
+
         <MainContainer>
+
             <div>
+
                 <Helmet>
                     <title>Calender | My Cambervan</title>
                 </Helmet>
+
                 <Heading>COMING SOON...</Heading>
+
             </div>
+            
         </MainContainer>
+
     )
 }
 

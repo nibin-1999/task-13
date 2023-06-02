@@ -5,13 +5,19 @@ import { Helmet } from 'react-helmet'
 function Menu() {
     return (
        <MainContainer>
+
             <div>
+                
                 <Helmet>
                     <title>Menu | My Cambervan</title>
                 </Helmet>
+
                 <Heading>COMING SOON...</Heading>
+
             </div>
+
         </MainContainer>
+
     );
 }
 
