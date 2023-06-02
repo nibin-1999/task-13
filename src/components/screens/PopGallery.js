@@ -125,16 +125,16 @@ function PopGallery() {
 const GalleryContainer = styled.div`
     width: 100%;
     display: flex;
-    justify-content: center;
+    justify-content: start;
 `;
 
 const LeftGAllery = styled.div`
     width: 63%;
-    margin-right: 60px;
+    margin-right: 75px;
 `;
 
 const LeftGalleryItem = styled.div`
-    width: 100%;
+    width: 106%;
 `;
 
 const MainItem = styled.img`
@@ -154,6 +154,8 @@ const RightGalleryItem = styled.div`
 const RightGalleryItem2 = styled.div`
     width: 100%;
     position: relative;
+    overflow: hidden;
+    
 `;
 
 const SubItem = styled.img`
@@ -163,7 +165,7 @@ const SubItem = styled.img`
     border-radius: 30px;
 `;
 const SubItem2 = styled.img`
-    width: 285px;
+    width: 270px;
     height: 235px;
     display: block;
     border-radius: 30px;
@@ -189,15 +191,14 @@ const Paragraph = styled.p`
 
 const GalleryPopUp = styled.div`
     position: fixed;
-    top: 120px;
-    left: 130px;
-    width: 90%;
-    height: 88%;
-    background-color: #fff;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #a7acb7;
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: 20px;
 `;
 
 const GalleryPopUpContainer = styled.div`
@@ -219,7 +220,7 @@ const GalleryPopUpImage = styled.img`
 
 const CloseButton = styled.button`
     position: absolute;
-    bottom: 9px;
+    bottom: 30px;
     right: 50%;
     padding: 15px 35px;
     background-color: rgb(253, 145, 114);

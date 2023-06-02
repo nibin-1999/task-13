@@ -55,7 +55,7 @@ const SlideContainerItems = styled.ul`
 `
 const SlideContent = styled.li`
    width: 30px;
-   margin-bottom: 40px;
+   margin-bottom: 50px;
     && :hover {
             background: #fce9e1;
             border-radius: 20px;

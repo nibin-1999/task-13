@@ -1,8 +1,11 @@
 import { Helmet } from "react-helmet";
 import styled from "styled-components";
 import PopGallery from "./PopGallery";
-
+import { useState } from "react";
+  
 function Car() {
+    const [check, setCheck] = useState(false);
+    const handleClick=()=>setCheck(!check)
 
     return (
         <MainContainer>
@@ -44,96 +47,78 @@ function Car() {
 
                         <LeftBottomContent>
                             <Heading2>Whats's Include</Heading2>
-                            <BottomContainer>
-                                <BottomLeftContainer>
-                                    <BottomContent>
-                                        <ContentImageContainer>
-                                            <ContentImage
-                                                src={
-                                                    require("../../Assets/Queen-Bed.svg")
-                                                        .default
-                                                }
+                            <WhatsItem>
+                                <WhatsLeft>
+                                    <WhatsImageContainer>
+                                        <WhatsImage
+                                            src={ require("../../Assets/Queen-Bed.svg").default}
                                                 alt="image"
-                                            />
-                                        </ContentImageContainer>
-                                        <ContentHeading>
-                                            Queen bed fit out
-                                        </ContentHeading>
-                                    </BottomContent>
-                                    <BottomContent>
-                                        <ContentImageContainer>
-                                            <ContentImage
-                                                src={
-                                                    require("../../Assets/Kitchen.svg")
-                                                        .default
-                                                }
+                                        />
+                                    </WhatsImageContainer>
+                                    <WhatsContentContainer>
+                                        <WhatsContent>Queen bed fit out</WhatsContent>
+                                    </WhatsContentContainer>
+                                </WhatsLeft>
+                                <WhatsRight>
+                                    <WhatsImageContainer>
+                                        <WhatsImage
+                                            src={ require("../../Assets/Room.svg").default}
                                                 alt="image"
-                                            />
-                                        </ContentImageContainer>
-                                        <ContentHeading>
-                                            Guest house
-                                        </ContentHeading>
-                                    </BottomContent>
-                                    <BottomContent>
-                                        <ContentImageContainer>
-                                            <ContentImage
-                                                src={
-                                                    require("../../Assets/Battery.svg")
-                                                        .default
-                                                }
+                                        />
+                                    </WhatsImageContainer>
+                                    <WhatsContentContainer>
+                                        <WhatsContent>Room single bed</WhatsContent>
+                                    </WhatsContentContainer>
+                                </WhatsRight>
+                            </WhatsItem>
+                            <WhatsItem>
+                                <WhatsLeft>
+                                    <WhatsImageContainer>
+                                        <WhatsImage
+                                            src={ require("../../Assets/Kitchen.svg").default}
                                                 alt="image"
-                                            />
-                                        </ContentImageContainer>
-                                        <ContentHeading>
-                                            Charging facility
-                                        </ContentHeading>
-                                    </BottomContent>
-                                </BottomLeftContainer>
-                                <BottomRightContainer>
-                                    <BottomContent>
-                                        <ContentImageContainer>
-                                            <ContentImage
-                                                src={
-                                                    require("../../Assets/Room.svg")
-                                                        .default
-                                                }
+                                        />
+                                    </WhatsImageContainer>
+                                    <WhatsContentContainer>
+                                        <WhatsContent>Guest house</WhatsContent>
+                                    </WhatsContentContainer>
+                                </WhatsLeft>
+                                <WhatsRight>
+                                    <WhatsImageContainer>
+                                        <WhatsImage
+                                            src={ require("../../Assets/Plus.svg").default}
                                                 alt="image"
-                                            />
-                                        </ContentImageContainer>
-                                        <ContentHeading>
-                                            Room single bed
-                                        </ContentHeading>
-                                    </BottomContent>
-                                    <BottomContent>
-                                        <ContentImageContainer>
-                                            <ContentImage
-                                                src={
-                                                    require("../../Assets/Plus.svg")
-                                                        .default
-                                                }
+                                        />
+                                    </WhatsImageContainer>
+                                    <WhatsContentContainer>
+                                        <WhatsContent>Additional requirements</WhatsContent>
+                                    </WhatsContentContainer>
+                                </WhatsRight>
+                            </WhatsItem>
+                            <WhatsItem>
+                                <WhatsLeft>
+                                    <WhatsImageContainer>
+                                        <WhatsImage
+                                            src={ require("../../Assets/Battery.svg").default}
                                                 alt="image"
-                                            />
-                                        </ContentImageContainer>
-                                        <ContentHeading>
-                                            Additional requirements
-                                        </ContentHeading>
-                                    </BottomContent>
-                                    <BottomContent>
-                                        <ContentImageContainer>
-                                            <ContentImage
-                                                src={
-                                                    require("../../Assets/Info.svg")
-                                                        .default
-                                                }
+                                        />
+                                    </WhatsImageContainer>
+                                    <WhatsContentContainer>
+                                        <WhatsContent>Charging facility</WhatsContent>
+                                    </WhatsContentContainer>
+                                </WhatsLeft>
+                                <WhatsRight>
+                                    <WhatsImageContainer>
+                                        <WhatsImage
+                                            src={ require("../../Assets/Info.svg").default}
                                                 alt="image"
-                                            />
-                                        </ContentImageContainer>
-                                        <ContentHeading>
-                                            Information
-                                        </ContentHeading>
-                                    </BottomContent>
-                                </BottomRightContainer>
-                            </BottomContainer>
+                                        />
+                                    </WhatsImageContainer>
+                                    <WhatsContentContainer>
+                                        <WhatsContent>Information</WhatsContent>
+                                    </WhatsContentContainer>
+                                </WhatsRight>
+                            </WhatsItem>
                         </LeftBottomContent>
                     </LeftContentBox>
 
@@ -183,63 +168,66 @@ function Car() {
                                 Insurence Options
                             </InsurenceHeading>
                             <Insurencedetails>
-                                <NoInsurence>
-                                    <CheckList></CheckList>
+                                <CheckList>
+                                    <CheckItem onClick={handleClick} >
+                                        
+                                    </CheckItem>
+                                </CheckList>
+
+                                
+                                <ClaimList>
                                     <Claim>
-                                        <InsurenceHeading1>
-                                            No Insurence
-                                        </InsurenceHeading1>
-                                        <InsurenceHeading2>
+                                            <ClaimHeading1>
+                                                No Insurence
+                                            </ClaimHeading1>
+                                            <ClaimHeading2>
                                             No insurence selected
-                                        </InsurenceHeading2>
+                                            </ClaimHeading2>
                                     </Claim>
-                                    <Amount1>
-                                        <AmountRate1>
-                                            <Price>$0.00</Price>
-                                        </AmountRate1>
-                                        <AmountRate2>
-                                            <PriceDay>$14/day</PriceDay>
-                                        </AmountRate2>
-                                    </Amount1>
-                                </NoInsurence>
-                                <CollisonProtection>
-                                    <CheckList></CheckList>
                                     <Claim>
-                                        <InsurenceHeading1>
-                                            Collition Protection
-                                        </InsurenceHeading1>
-                                        <InsurenceHeading2>
-                                            Collition protection on vehicle only
-                                        </InsurenceHeading2>
+                                            <ClaimHeading1>
+                                                Collition Protection
+                                            </ClaimHeading1>
+                                            <ClaimHeading2>
+                                                Collition protection on vehicle only
+                                            </ClaimHeading2>
                                     </Claim>
-                                    <Amount2>
-                                        <AmountRate1>
-                                            <Price>$0.00</Price>
-                                        </AmountRate1>
-                                        <AmountRate2>
-                                            <PriceDay>$14/day</PriceDay>
-                                        </AmountRate2>
-                                    </Amount2>
-                                </CollisonProtection>
-                                <ThirdParty>
-                                    <CheckList></CheckList>
                                     <Claim>
-                                        <InsurenceHeading1>
-                                            Third Party
-                                        </InsurenceHeading1>
-                                        <InsurenceHeading2>
-                                            3rd party liability insurence only
-                                        </InsurenceHeading2>
+                                            <ClaimHeading1>
+                                                Third Party
+                                            </ClaimHeading1>
+                                            <ClaimHeading2>
+                                                3rd party liability insurence only
+                                            </ClaimHeading2>
                                     </Claim>
-                                    <Amount3>
+                                </ClaimList>
+
+                                <AmountList>
+                                    <Amount>
                                         <AmountRate1>
                                             <Price>$0.00</Price>
                                         </AmountRate1>
                                         <AmountRate2>
                                             <PriceDay>$14/day</PriceDay>
                                         </AmountRate2>
-                                    </Amount3>
-                                </ThirdParty>
+                                    </Amount>
+                                    <Amount>
+                                        <AmountRate1>
+                                            <Price>$0.00</Price>
+                                        </AmountRate1>
+                                        <AmountRate2>
+                                            <PriceDay>$14/day</PriceDay>
+                                        </AmountRate2>
+                                    </Amount>
+                                    <Amount>
+                                        <AmountRate1>
+                                            <Price>$0.00</Price>
+                                        </AmountRate1>
+                                        <AmountRate2>
+                                            <PriceDay>$14/day</PriceDay>
+                                        </AmountRate2>
+                                    </Amount>
+                                </AmountList>
                             </Insurencedetails>
                         </RightBottomContent>
                     </RightContentBox>
@@ -312,7 +300,7 @@ function Car() {
 const MainContainer = styled.div`
     width: 100%;
     background: #f6f6f6;
-    height: calc(100vh - 100px);
+    height: 100vh;
     padding: 20px 0 0 0;
     display: flex;
     justify-content: flex-start;
@@ -321,9 +309,9 @@ const MainContainer = styled.div`
 const LeftContainer = styled.div`
     width: 60%;
     background: #fff;
-    padding: 25px;
+    padding: 30px;
     border-radius: 40px;
-    margin: 0 30px;
+    margin: 0 70px;
 `;
 
 
@@ -333,7 +321,7 @@ const ContentContainer = styled.div`
 `;
 
 const LeftContentBox = styled.div`
-    width: 60%;
+    width: 55%;
 `;
 
 const LeftTopContent = styled.div`
@@ -342,7 +330,7 @@ const LeftTopContent = styled.div`
 
 const Heading1 = styled.h1`
     font-size: 25px;
-    margin: 5px;
+    margin: 10px 0;
 `;
 
 const ParagraphContainer = styled.div`
@@ -380,78 +368,88 @@ const Spot = styled.span`
 `;
 
 const Paragraph = styled.p`
-    margin-top: 5px;
+    margin: 3px 0 10px;
     color: #a8adb4;
-    width: 550px;
+    width: 455px;
 `;
 
 const LeftBottomContent = styled.div`
-    width: 100%;
+    width: 90%;
 `;
 
 const Heading2 = styled.h2`
-    font-size: 20px;
+    font-size: 18px;
     font-weight: 700;
-`;
-
-const BottomContainer = styled.div`
-    width: 80%;
-    display: flex;
-    justify-content: space-between;
-`;
-
-const BottomLeftContainer = styled.div`
-    width: 50%;
-`;
-
-const BottomRightContainer = styled.div`
-    width: 64%;
-`;
-const BottomContent = styled.div`
-    width: 80%;
-    display: flex;
-    justify-content: flex-start;
-`;
-
-const ContentImageContainer = styled.div`
-    width: 100%;
-    display: flex;
-    justify-content: flex-start;
-    && :hover {
-        background: #fce9e1;
-        border-radius: 15px;
-        cursor: pointer;
-    }
-`;
-
-const ContentImage = styled.img`
-    margin-right: 20px;
-    padding: 10px;
-`;
-
-const ContentHeading = styled.h4`
-    width: 700px;
     margin: 15px 0;
 `;
 
+const WhatsItem = styled.div`
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+`;
+
+const WhatsLeft = styled.div`
+    width:50%;
+    margin: 0 15px 10px 0;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+   
+`
+
+const WhatsImageContainer = styled.div`
+    width: 10%;
+    align-items: center;
+    margin-right: 20px;
+    && :hover {
+        background: #fce9e1;
+        border-radius: 10px;
+        cursor: pointer;
+    }
+`
+
+const WhatsImage = styled.img`
+    width: 100%;
+    display: block;
+    padding: 5px;
+    border-radius: 10px;
+
+`
+const WhatsContentContainer = styled.div``
+
+const WhatsContent = styled.span`
+    font-size: 15px;
+    font-weight: 600;
+`
+
+const WhatsRight = styled.div`
+    width:50%;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    
+`
+
 const RightContentBox = styled.div`
-    width: 340%;
+    width: 45%;
 `;
 
 const RightTopContent = styled.div`
     width: 100%;
-    margin-bottom: 30px;
+    margin-top: 10px;
 `;
 
-const OwnerHeading = styled.h3`
-    font-size: 18px;
+const OwnerHeading = styled.h2`
+    font-size: 20px;
     font-weight: 700;
     color: #2e355d;
-    margin: 10px 0;
+    margin-bottom: 10px;
 `;
 
 const OwnerInfo = styled.div`
-    width: 80%;
+    width: 90%;
     height: 50px;
     display: flex;
     justify-content: space-between;
@@ -465,12 +463,12 @@ const OwnerLeftInfo = styled.div`
 `;
 
 const OwnerImageContainer = styled.div`
-    width: 70px;
+    width: 80px;
     height: 60px;
     overflow: hidden;
     border-radius: 50%;
     margin-right: 20px;
-    margin-top: 20px;
+    margin-top: 14px;
 `;
 
 const OwnerImage = styled.img`
@@ -541,87 +539,77 @@ const CallIcone = styled.img`
 
 const RightBottomContent = styled.div`
     width: 100%;
-    margin-top: 30px;
 `;
 
 const InsurenceHeading = styled.h2`
     font-size: 20px;
-    margin-bottom: 20px;
+    padding: 50px 0 35px;
 `;
 
 const Insurencedetails = styled.div`
     width: 100%;
-`;
-
-const NoInsurence = styled.div`
     display: flex;
-    align-items: center;
-    margin-bottom: 20px;
-`;
+`
 
-const CollisonProtection = styled.div`
-    display: flex;
+const CheckList = styled.div`
+    width: 10%;
     align-items: center;
-    margin-bottom: 20px;
-`;
+    margin-top: 5px;
+`
 
-const ThirdParty = styled.div`
-    display: flex;
-    align-items: center;
-`;
+const CheckItem = styled.div`
+    margin-bottom: 38px;
+`
 
-const CheckList = styled.button`
-    height: 20px;
-    width: 20px;
-    border-radius: 20px;
-    border: 1px solid #2e355d;
-    cursor: pointer;
-    top: 0px;
-`;
+
+const ClaimList = styled.div`
+    width: 70%;
+    
+`
 
 const Claim = styled.div`
-    margin-left: 15px;
-`;
+    margin-bottom: 25px;
+`
 
-const InsurenceHeading1 = styled.h3`
-    margin: 0 70px 5px 0;
+const ClaimHeading1 = styled.h3`
     font-size: 18px;
     font-weight: 600;
-    width: 100%;
     color: #2e355d;
-`;
-
-const InsurenceHeading2 = styled.h4`
-    font-size: 15px;
-    font-weight: 600;
+`
+const ClaimHeading2 = styled.span`
+    font-size: 16px;
+    font-weight: 500;
     color: #a8adb4;
-`;
+`
 
-const Amount1 = styled.h4`
-    margin-left: 30px;
-    margin-left: 110px;
-`;
+const AmountList = styled.div`
+    align-items: center;
+    width: 20%;
+`
 
-const Amount2 = styled.h4`
-    margin-left: 59px;
-`;
-const Amount3 = styled.h4`
-    margin-left: 72px;
-`;
+const Amount = styled.div`
+    margin-bottom: 20px;
+    
+`
 
-const AmountRate1 = styled.div``;
+const AmountRate1 = styled.div`
+    margin-bottom: 5px;
+`
 
-const Price = styled.span`
-    margin-left: 7px;
-`;
-
-const AmountRate2 = styled.div``;
-
-const PriceDay = styled.span`
-    font-size: 15px;
+const Price = styled.div`
+    font-size: 18px;
     font-weight: 600;
+    color: #2e355d;
+    padding: 0 0 0 5px;
+`
+
+const AmountRate2 = styled.div``
+
+const PriceDay = styled.div`
+     font-size: 16px;
+    font-weight: 500;
     color: #a8adb4;
-`;
+`
 
 const RightContiner = styled.div`
     width: 25%;
@@ -631,7 +619,7 @@ const RightTopContainer = styled.div`
     background: #fff;
     padding: 20px 30px;
     border-radius: 40px;
-    height: 55%;
+    height: 64%;
 `;
 
 const RentHeading = styled.h1`
@@ -639,18 +627,17 @@ const RentHeading = styled.h1`
     width: 100px;
     background: rgb(168, 173, 180);
     padding: 12px;
-    margin: 0px 38%;
+    margin: 5px 35% 40px;
     border-radius: 40px;
-    margin-bottom: 20px;
 `;
 
 const PickUpContainer = styled.div`
     width: 100%;
-    margin: 0;
+    margin: 0 0 25px 0;
 `;
 
-const PickUpHead = styled.h2`
-    font-size: 20px;
+const PickUpHead = styled.h3`
+    font-size: 18px;
     font-weight: 700;
     margin: 0 0 5px 0;
 `;
@@ -662,15 +649,15 @@ const PickUpContent = styled.div`
     margin: 0 0 10px 0;
 `;
 
-const SampaContent = styled.h3`
-    font-size: 20px;
+const SampaContent = styled.h4`
+    font-size: 18px;
     font-weight: 600;
     color: #a8adb4;
     margin: 0;
 `;
 
-const SanpaDate = styled.h3`
-    font-size: 20px;
+const SanpaDate = styled.h4`
+    font-size: 18px;
     font-weight: 600;
     color: #a8adb4;
     margin: 0;
@@ -678,11 +665,11 @@ const SanpaDate = styled.h3`
 
 const DropContainer = styled.div`
     width: 100%;
-    margin: 0;
+    margin: 0 0 25px 0;
 `;
 
-const DropHead = styled.h2`
-    font-size: 20px;
+const DropHead = styled.h3`
+    font-size: 18px;
     font-weight: 700;
     margin: 0 0 5px 0;
 `;
@@ -695,7 +682,7 @@ const DropContent = styled.div`
 `;
 
 const SumatraContent = styled.h3`
-    font-size: 20px;
+    font-size: 18px;
     font-weight: 600;
     color: #a8adb4;
     margin: 0;
@@ -713,8 +700,8 @@ const DailyContainer = styled.div`
     border-bottom: 2px solid #a7acb7;
 `;
 
-const DailyHead = styled.h2`
-    font-size: 20px;
+const DailyHead = styled.h3`
+    font-size: 18px;
     font-weight: 700;
     margin: 0 0 5px 0;
 `;
@@ -723,17 +710,17 @@ const DailyContentContainer = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 20px;
+    margin-bottom: 25px;
 `;
 
-const DailyContent = styled.h3`
-    font-size: 20px;
+const DailyContent = styled.h4`
+    font-size: 18px;
     font-weight: 600;
     margin-top: 5px;
 `;
 
-const DailyTotal = styled.h3`
-    font-size: 20px;
+const DailyTotal = styled.h4`
+    font-size: 18px;
     font-weight: 600;
     margin: 0;
 `;
@@ -742,7 +729,7 @@ const RentContainer = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-top: 10px;
+    margin-top: 20px;
 `;
 
 const RentContent = styled.h3`
@@ -762,7 +749,7 @@ const TotalContainer = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin: 10px 0;
+    margin: 50px 0;
 `;
 
 const TotalRent = styled.h1`
@@ -779,10 +766,10 @@ const TotalRate = styled.h1`
 const RentButton = styled.button`
     font-size: 20px;
     font-weight: 500;
-    width: 410px;
+    width: 390px;
     color: #fff;
     background: rgb(253, 145, 114);
-    padding: 12px;
+    padding: 15px;
     border-radius: 21px;
     cursor: pointer;
 `;
